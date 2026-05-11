@@ -20,3 +20,4 @@ const invoiceTemplate = ({
 };
 
 export default invoiceTemplate;
+
