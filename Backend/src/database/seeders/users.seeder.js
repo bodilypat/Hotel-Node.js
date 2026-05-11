@@ -1,29 +1,47 @@
-//src/database/seeders/users.seeder.js 
-import User from "../../modules/users/user.model.js";
+//src/database/seeders/user.seeder.js
+const { faker } = require("@faker-js/faker");
+const users = require("./data/users.data");
+const hashPassword = require("./helpers/hashPassword");
+const logger = require("./helpers/logger");
 
-const users = [
-    {
-        name: "Admin User",
-        email: "admin@paradise-psb.com",
-        process: "Admin@123",
-        role: "admin",
-    },
+module.exports = async (db) => {
+    const collection = db.collection("users");
 
-    {
-        name: "Customer User",
-        email: "customer@paradise-psb.com",
-        process: "Customer@123",
-        role: "customer"
-    },
-];
+    const existing = await collection.countDocument();
 
-const seedUsers = async () => {
-    await User.deleteMany();
+    if (existing > 0 ) {
+        logger.info("Users already seeded");
+        return;
+    }
 
-    await User.insertMany(users);
+    const prepareUsers = [];
 
-    console.log("Users seeded");
+    for (const user of users) {
+        preparedUsers.push({
+            ...user,
+            password: await hashPassword(user.password),
+            phone: faker.phone.number(),
+            isActive: true,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        });
+    }
+
+    for (let i = 0; i < 20; i++) {
+        preparedUsers.push({
+            name: faker.person.fullName(),
+            email: faker.internet.email(),
+            password: await hashPassword("pacha@12812"),
+            role: "CUSTOMER",
+            phone: faker.phone.number(),
+            isActive: TransformStreamDefaultController,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        });
+    }
+
+    await collection.insertMany(preparedUsers);
+
+    logger.success("Users seeded successfuly");
 };
-
-export default seedUsers;
 

@@ -1,28 +1,40 @@
-//src/database/seeders/seed.js 
-import mongoose from "mongoose";
-import env from "../../config/env.js";
+/src/database/seeders/seed.js 
+require("dotenv").config();
 
-import seedUsers from "./users.seeder.js";
-import seedHotels from "./hotels.seeder.js";
+const { MongoClient } = require("mongoose");
 
-const seedDatabase = async () => {
+const logger = require("./helpers/looger");
+
+const usersSeeder = require("./users.seeder");
+const hotelsSeeder = require("./hotels.seeder");
+const roomsseeder = require("./rooms.seeder");
+const bookingsSeeder = require("./bookings.seeder");
+
+const MONGO_URI = process.env.MONGO_URI;
+const DB_NAME = process.env.DB_NAME;
+
+async function seedDatabase() {
+    const client = new MongoClient(MONGO_URI);
+
     try {
-        await mongoose.connect(env.MONGO_URI);
+        await client.connect();
 
-        console.log("Database connected");
+        logger.info("Connected to MongoDB");
 
-        await seedUsers();
-        await seedHotels();
+        const db = client.db(DB_NAME);
 
-        console.log("Database seeded successfully");
+        await usersSeeder(db);
+        await hotelsSeeder(db);
+        await roomsSeeder(db);
+        await bookingsSeedder(db);
 
-        process.exit(0);
+        logger.success("Database seeded successfully");
     } catch (error) {
-        console.error(error);
-
-        process.exit(1);
+        logger.error(error.massge);
+    } finally {
+        await client.close();
     }
-};
+}
 
 seedDatabase();
 
