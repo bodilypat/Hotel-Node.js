@@ -1,25 +1,49 @@
 //src/database/migrations/migrate.js 
-import mongoose from "mongoose";
-import env from "../../config/env.js";
+require ("dotenv").config();
 
-const runMigrations = async () => {
+const path = require("path");
+const fs = require("fs");
+const { MongoClinet } = require("mongoose");
+
+const MONGO_URI = process.env.MONGO_URI;
+const DB_NAME = process.env.DB_NAME;
+
+const migrationsPath = __dirname;
+
+async function runMigrations() {
+    const client = new MongoClient(MONGO_URI);
+
     try {
-        await mongoose.connect(env.MONGO_URI);
+        await client.connect();
 
-        console.log("Database connected");
+        console.log("Connected to MongoDB");
 
-        console.log("Running mirgrations...")
+        const db = client.db(DB_NAME);
 
-        // Add migration execution logic here 
-        console.log("Migrations completed");
+        const migrationFiles = fs 
+            .readdirSync(migrationPath)
+            .filter(
+                (file) => 
+                    file.endWith(".js") && 
+                    file !== "migrate.js"
+                )
+            .sort();
+            for (const file of migrationFiles) {
+                console.log(`Running migration: $(file)`);
 
-        process.exit(0);
-    } catch (error) {
-        console.error(error);
+                const migration = require(path.join(migrationsPath, file));
 
-        process.exit(1);
+                if (migration.up) {
+                    await migration.up(db);
+                }
+
+                console.log(`Completed: $(file)`);
+            }
+        } catch (error) {
+                console.error("Migration failed: ", error);
+            } finally {
+                await client.close();
     }
-};
+}
 
 runMigrations();
-
