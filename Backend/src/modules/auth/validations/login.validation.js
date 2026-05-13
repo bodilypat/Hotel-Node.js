@@ -11,3 +11,4 @@ module.exports = Joi.object({
           .required(),
     }),
 });
+
