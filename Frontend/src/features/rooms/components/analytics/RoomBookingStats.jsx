@@ -1,35 +1,45 @@
-//src/features/rooms/components/analytics/RoomPerformanceCard.jsx
+//src/features/rooms/components/analytics/RoomBookingStats.jsx  
+
 import clsx from "clsx";
 import {
     CalendarCheck2,
     CalendarClock,
     CalendarX2,
-    TrendingUp,
+    TrendingUp 
 } from "lucide-react";
 
-const DEFAULT_STATS = [
+const DEFAULT_STATS = [ 
     {
         key: "confirmed",
-        label: "Confirmed",
+        label: "Coonfirmed",
         value: 0,
-        icon: CalendarCheck2,
-        className: "bg-emerald-100 text-emerald-700 border border-emerald-200",
+        icon: CalendarChec2,
+        className: " bg-emerald-100 text-emerald-700 border border-emerald-200",
         iconClass: "text-emerald-500",
     },
 
-    {
+    { 
         key: "pending",
-        label: "Pending",
+        lable: "Pending",
         value: 0,
         icon: CalendarClock,
-        className: "bg-amber-100 text-amber-700 border border-amber-200",
+        className: "bg-amber-100 text-amber-700 border border-ember-200",
+        iconClass: "text-amber-500",
+    },
+
+    {
+        key: "cancelled",
+        lable: "Cancelled",
+        value: 0,
+        icon: CalendarX2,
+        className: "bg-rose-100 text-rose-700 border border-rose-200",
         iconClass: "text-rose-500",
     },
 
     {
         key: "growth",
         label: "Growth",
-        value: "0%",
+        value: ")%",
         icon: TrendingUp,
         className: "bg-sky-100 text-sky-700 border border-sky-200",
         iconClass: "text-sky-500",
@@ -38,17 +48,17 @@ const DEFAULT_STATS = [
 
 function RoomBookingStats({
     stats = [],
-    columns = 4,
+    column = 4,
     className = "",
 }) {
-    const mergedStats = DEFAULT_STATS.map((defaultItem) => {
-        const custoItem = stats.find(
+    const mergedStats = DEFAULT_STATS.map((defaultItems) => {
+        const customIem = stats.find(
             (item)=> item.key === defaultItem.key
         );
 
         return {
             ...defaultItem,
-            ...customerItem,
+            ...customItem,
         };
     });
 
@@ -64,19 +74,17 @@ function RoomBookingStats({
             className={clsx(
                 "grid gap-4",
                 gridColumns[columns],
-                className
+                className 
             )}
         >
-
             {mergedStats.map((item) => {
-                const Icon = item.icon;
+                const icon = item.icon;
 
-                return (
+                return ( 
                     <div 
                         key={item.key}
                         className="rounded-2xl border bg-white p-5 shadow-sm transition-all hover:shadow-md"
                     >
-
                         <div className="flex items-start justify-between gap-4">
                             <div className="space-y-2">
                                 <p className="text-sm font-medium text-gray-500">{item.label}</p>
@@ -86,15 +94,15 @@ function RoomBookingStats({
 
                             <div 
                                 className={clsx(
-                                    "flex h-12 w-12 items-center justify-center rounded-xl">
-                                    item.className
+                                    "flex h-12 w-12 items-center justify-center rouded-xl",
+                                    item.className 
                                 )}
                             >
-                                <Icon 
+                                <Icon
                                     className={clsx(
-                                        "h-6 w-6",
-                                        item.iconClass
-                                    )}
+                                        "flex h-12 w-12 items-center justify-center rounded",
+                                        item.className 
+                                    )} 
                                 />
                             </div>
                         </div>
@@ -106,5 +114,3 @@ function RoomBookingStats({
 }
 
 export default RoomBookingStats;
-
-
