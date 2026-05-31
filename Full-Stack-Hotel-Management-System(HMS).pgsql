@@ -121,148 +121,208 @@ Fullstack-Hotel-Management-System/
 │   │	│       ├── variables.css
 │   │	│       ├── themes.css
 │   │   │       └── animations.css
-│   │   ├── shared/ 
-│   │	│   ├── components/
-│   │	│   │   ├── ui/
-│   │	│   │   │   ├── Button.jsx
-│   │	│   │   │   ├── Input.jsx 
-│   │	│   │   │   ├── Select.jsx 
-│   │	│   │   │   ├── Modal.jsx 
-│   │	│   │   │   ├── Table.jsx 
-│   │	│   │   │   ├── Card.jsx 
-│   │	│   │   │   ├── Badge.jsx 
-│   │	│   │   │   ├── Tooltip.jsx 
-│   │	│   │   │   ├── Pagination.jsx
-│   │	│   │   │   ├── Skeleton.jsx
-│   │   │   │   │   └── index.js
-│   │	│   │   ├── feedback/
-│   │	│   │   │   ├── Loader.jsx 
-│   │	│   │   │   ├── EmptyState.jsx 
-│   │	│   │   │   ├── ErrorMessage.jsx
-│   │   │   │   │   └── NoData.jsx
-│   │   │   │   └── navigation/
-│   │	│   │       ├── Navbar.jsx 
-│   │	│   │       ├── Sidebar.jsx 
-│   │	│   │       ├── Footer.jsx
-│   │   │   │       └── Breadcrumb.jsx
-│   │	│   ├── hooks/
-│   │	│   │   ├── useAuth.js
-│   │	│   │   ├── useDebounce.js
-│   │	│   │   ├── usePagination.js
-│   │	│   │   ├── useModal.js
-│   │   │   │   └── useLocalStorage.js
-│   │	│   ├── services/
-│   │	│   │   ├── api.js
-│   │	│   │   ├── axiosInterceptor.js
-│   │   │   │   └── socker.js
-│   │	│   ├── utils/
-│   │	│   │   ├── formatDate.js
-│   │	│   │   ├── currencyFormatter.js
-│   │	│   │   ├── validators.js
-│   │	│   │   ├── storage.js
-│   │   │   │   └── permissions.js 
-│   │	│   ├── constants/
-│   │	│   │   ├── apiEndpointsjs
-│   │	│   │   ├── roles.js
-│   │   │   │   └── appConstants.js
-│   │	│   ├── config/
-│   │	│   ├── validations/
-│   │   │   └── types/
+│   │   ├── pages/ 
+│   │	│   ├── Dashboard.jsx
+│   │	│   ├── Rooms.jsx
+│   │	│   ├── RoomDetails.jsx
+│   │	│   ├── Reservations.jsx
+│   │	│   ├── Rooms.jsx
+│   │	│   ├── Guests.jsx
+│   │	│   ├── Billing.jsx
+│   │	│   ├── Employees.jsx
+│   │	│   ├── Reports.jsx
+│   │	│   ├── Settings.jsx 
+│   │	│   ├── Login.jsx
+│   │	│   ├── Register.jsx
+│   │	│   ├── Unauthorized.jsx
+│   │   │   └── NotFound.jsx
 │   │   │      
 │   │   ├── features/                                      # Feature-based modules 
 │   │	│   ├── auth/
-│   │	│   │   ├── index.js
 │   │	│   │   ├── api/
 │   │	│   │   │   ├── auth.api.js
 │   │	│   │   │   ├── auth.queries.js
 │   │	│   │   │   ├── auth.mutations.js
-│   │   │   │   │   └── auth.mapper.js
+│   │	│   │   │   ├── auth.endpoints.js
+│   │	│   │   │   ├── auth.mapper.js
+│   │	│   │   │   ├── auth.adapter.js
+│   │	│   │   │   ├── auth.schema.js
+│   │	│   │   │   ├── auth.keys.js
+│   │   │   │   │   └── auth.validator.js
 │   │	│   │   ├── components/
 │   │	│   │   │   ├── forms/
 │   │	│   │   │   │   ├── LoginForm.jsx
 │   │	│   │   │   │   ├── RegisterForm.jsx
-│   │	│   │   │   │   ├── ForgotPasswordForm.jsx 
+│   │	│   │   │   │   ├── ForgotPasswordForm.jsx
 │   │	│   │   │   │   ├── ResetPasswordForm.jsx
-│   │	│   │   │   │   ├── OTOverificationForm.jsx
-│   │	│   │   │   │   ├── ChangePasswordForm.jsx
-│   │	│   │   │   │   ├── SocialLoginButton.jsx
-│   │   │   │   │   │   └── AuthFormWrapper.jsx
-│   │	│   │   │   ├── fields/
-│   │	│   │   │   │   ├── ForgotPasswordForm.jsx 
-│   │	│   │   │   │   ├── ResetPasswordForm.jsx
-│   │	│   │   │   │   ├── OTOverificationForm.jsx
-│   │	│   │   │   │   ├── ChangePasswordForm.jsx
-│   │	│   │   │   │   ├── SocialLoginButton.jsx
-│   │   │   │   │   │   └── AuthFormWrapper.jsx
-│   │	│   │   │   ├── hooks/
-│   │	│   │   │   │   ├── useLoginForm.js
-│   │	│   │   │   │   ├── useRegisterForm.js
-│   │   │   │   │   │   └── useForgotPassword.js
-│   │   │   │   │   └── styles/
-│   │	│   │   │       ├── usForm.module.css
-│   │   │   │   │       └── input.module.css
+│   │   │   │   │   │   └── ChangePasswordForm.jsx
+│   │	│   │   │   ├── guard/
+│   │	│   │   │   │   ├── ProtectedRoute.jsx
+│   │	│   │   │   │   ├── PublicRoute.jsx
+│   │	│   │   │   │   ├── RoleGuard.jsx
+│   │   │   │   │   │   └── PermissionGuard.jsx
+│   │	│   │   │   ├── Profile/
+│   │	│   │   │   │   ├── UserProfile.jsx
+│   │	│   │   │   │   ├── UserAvator.jsx
+│   │	│   │   │   │   ├── UserDetails.jsx
+│   │   │   │   │   │   └── UserPreferences.jsx
+│   │	│   │   │   ├── sessions/
+│   │	│   │   │   │   ├── SessionList.jsx
+│   │	│   │   │   │   ├── SessionCard.jsx
+│   │   │   │   │   │   └── ActiveSessionBadge.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── AuthHeader.jsx
+│   │	│   │   │       ├── AuthLayout.jsx
+│   │	│   │   │       ├── AuthLaoding.jsx
+│   │	│   │   │       ├── AuthError.jsx
+│   │   │   │   │       └── Unauthorized.jsx
+│   │	│   │   ├── hooks/
+│   │	│   │   │   ├── useAuth.js
+│   │	│   │   │   ├── useLogin.js
+│   │	│   │   │   ├── useLogout.js
+│   │	│   │   │   ├── useRegister.js
+│   │	│   │   │   ├── useCurrentUser.js
+│   │	│   │   │   ├── usePermissions.js
+│   │	│   │   │   ├── useRoles.js 
+│   │	│   │   │   ├── useForgotPassword.js
+│   │	│   │   │   ├── useResetPassword.js
+│   │   │   │   │   └── useSession.js 
 │   │	│   │   ├── pages/
 │   │	│   │   │   ├── LoginPage.jsx
 │   │	│   │   │   ├── RegisterPage.jsx
-│   │   │   │   │   └── ForgotPasswordPage.jsx
-│   │	│   │   ├── pages/
-│   │	│   │   │   ├── useAuth.js
-│   │   │   │   │   └── useLogin.js
-│   │	│   │   ├── services/
-│   │   │   │   │   └── tokenService.js
-│   │	│   │   ├── layoutss/
-│   │   │   │   │   └── AuthLayout.js
-│   │	│   │   ├── context/
-│   │   │   │   │   └── AuthContext.jsx
-│   │	│   │   ├── store/
-│   │	│   │   │   ├── authSlice.js
-│   │	│   │   │   ├── authSelectors.js
-│   │	│   │   │   ├── authListeners.js
-│   │   │   │   │   └── authMiddleware.js
+│   │	│   │   │   ├── ForgotPasswordPage.jsx
+│   │	│   │   │   ├── ResetPasswordPage.jsx
+│   │	│   │   │   ├── ProfilePage.jsx
+│   │   │   │   │   └── UnauthorizedPage.jsx 
 │   │	│   │   ├── routes/
-│   │	│   │   │   ├── authRoutes.jsx
-│   │   │   │   │   └── authRouteConfig.js
-│   │	│   │   ├── permissions/
-│   │   │   │   │   └── authPermissions.js
-│   │	│   │   ├── validations/
-│   │	│   │   │   ├── loginSchema.js
-│   │   │   │   │   └── registerSchema.js
-│   │	│   │   ├── constants/
-│   │   │   │   │   └── authConstants.js
-│   │	│   │   ├── types/
-│   │	│   │   │   ├── auth.types.ts
-│   │   │   │   │   └── auth.enums.ts
-│   │   │   │   └── utils/
-│   │   │   │       └── authHelpers.js
-│   │	│   ├── dashboard/ (Dashboard page: Overview, Rooms, Reservation, Guests, Staff, Payments, Inventory, Reports, setting)
-│   │	│   │   ├── index.js
-│   │	│   │   ├── api/
-│   │	│   │   ├── components/
-│   │	│   │   ├── pages/
-│   │	│   │   ├── hooks/
+│   │   │   │   │   └── auth.routes.jsx
 │   │	│   │   ├── store/
+│   │	│   │   │   ├── auth.store.js
+│   │	│   │   │   ├── auth.actions.js
+│   │   │   │   │   └── auth.selectors.js 
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── auth.constants.js
+│   │	│   │   │   ├── roles.js 
+│   │	│   │   │   ├── permissions.js
+│   │   │   │   │   └── auth.storage.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── login.schema.js 
+│   │	│   │   │   ├── register.schema.js
+│   │	│   │   │   ├── resetPassword.schema.js
+│   │   │   │   │   └── profile.schema.js 
 │   │	│   │   ├── utils/
-│   │	│   │   ├── analytics/
+│   │	│   │   │   ├── auth.helpers.js
+│   │	│   │   │   ├── auth.tokens.js
+│   │	│   │   │   ├── auth.permissions.js 
+│   │	│   │   │   ├── auth.redirects.js
+│   │   │   │   │   └── auth.transformers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── LoginForm.test.jsx
+│   │	│   │   │   ├── ProtectedRoute.test.jsx
+│   │   │   │   │   └── auth.helpers.test.js 
 │   │	│   │   ├── mocks/
-│   │   │   │   └── tests/
-│   │	│   ├── rooms/
-│   │	│   │   ├── index.js
+│   │	│   │   │   ├── auth.mock.js
+│   │   │   │   │   └── auth.data.js
+│   │   │   │   └── index.js
+│   │	│   ├── dashboard/ (Dashboard page: Overview, Rooms, Reservation, Guests, Staff, Payments, Inventory, Reports, setting)
 │   │	│   │   ├── api/
-│   │	│   │   │   ├── rooms.api.js
+│   │	│   │   │   ├── dashboard.api.js
+│   │	│   │   │   ├── dashboard.queries.js
+│   │	│   │   │   ├── dashboard.endpoints.js
+│   │	│   │   │   ├── dashboard.mapper.js
+│   │	│   │   │   ├── dashboard.adapter.js
+│   │	│   │   │   ├── dashboard.schema.js
+│   │	│   │   │   ├── dashboard.keys.js
+│   │   │   │   │   └── dashboard.validator.js
+│   │	│   │   ├── components/
+│   │	│   │   │   ├── cards/
+│   │	│   │   │   │   ├── RevenueCard.jsx 
+│   │	│   │   │   │   ├── OccupancyCard.jsx
+│   │	│   │   │   │   ├── ReservationCard.jsx
+│   │	│   │   │   │   ├── GuestCard.jsx
+│   │	│   │   │   │   ├── EmployeeCard.jsx
+│   │	│   │   │   │   ├── AvailableRoomCard.jsx
+│   │	│   │   │   │   ├── CheckInCard.jsx
+│   │   │   │   │   │   └── CheckOutCard.jsx
+│   │	│   │   │   ├── charts/
+│   │	│   │   │   │   ├── RevenueChart.jsx
+│   │	│   │   │   │   ├── OccupancyChart.jsx
+│   │	│   │   │   │   ├── ReservationTrendChart.jsx
+│   │	│   │   │   │   ├── GuestGrowthChart.jsx
+│   │	│   │   │   │   ├── PaymenChart.jsx
+│   │   │   │   │   │   └── RoomPerformanceChart.jsx
+│   │	│   │   │   ├── widgets/
+│   │	│   │   │   │   ├── UpcomingCheckIns.jsx
+│   │	│   │   │   │   ├── UpcomingCheckOuts.jsx
+│   │	│   │   │   │   ├── RecentReservations.jsx
+│   │	│   │   │   │   ├── RoomAvailabilityWidget.jsx
+│   │	│   │   │   │   ├── HouseKeepingWidget.jsx
+│   │	│   │   │   │   ├── MaintenanceWidget.jsx
+│   │   │   │   │   │   └── NotificationsWidget.jsx
+│   │	│   │   │   ├── analytics/
+│   │	│   │   │   │   ├── RevenueAnalytics.jsx
+│   │	│   │   │   │   ├── OccupancyAnalytics.jsx
+│   │	│   │   │   │   ├── ReservationAnalytics.jsx
+│   │   │   │   │   │   └── GuestAnalytics.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── DashboardHeader.jsx
+│   │	│   │   │       ├── DashboardActions.jsx
+│   │	│   │   │       ├── DashboardSkeleton.jsx
+│   │	│   │   │       ├── DashboardEmptyState.jsx
+│   │   │   │   │       └── DashboardErrorState.jsx
+│   │	│   │   ├── hooks/
+│   │	│   │   │   ├── useDashboard.js
+│   │	│   │   │   ├── useDashboardMetics.js
+│   │	│   │   │   ├── useRevenueMetrics.js
+│   │	│   │   │   ├── useOccupancyMetriics.js
+│   │	│   │   │   ├── useReservationMetrics.js 
+│   │	│   │   │   ├── useGuestMetrics.js
+│   │	│   │   │   ├── useDashboardFilters.js
+│   │   │   │   │   └── useRealtimeDashboard.js 
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── DashboardPage.jsx
+│   │	│   │   │   ├── ExcutiveDashboardPage.jsx
+│   │	│   │   │   ├── ManagerDashboardPage.jsx
+│   │   │   │   │   └── ReceptionDashboardPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── dashboard.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── dashboard.constants.js
+│   │	│   │   │   ├── dashboard.widgets.js
+│   │   │   │   │   └── dashboard.roles.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── dashboardFilter.schema.js
+│   │   │   │   │   └── dashboardWidget.schema.js 
+│   │	│   │   ├── utils/
+│   │	│   │   │   ├── dashboard.helpers.js
+│   │	│   │   │   ├── dashboard.formatters.js 
+│   │	│   │   │   ├── dashboard.calculations.js
+│   │   │   │   │   └── dashboard.transformers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── RevenueCard.test.jsx
+│   │	│   │   │   ├── DashboardPage.test.jsx
+│   │   │   │   │   └── dashboard.helpers.test.js 
+│   │	│   │   ├── mocks/
+│   │	│   │   │   ├── dashboard.mock.js
+│   │   │   │   │   └── dashboard.data.js
+│   │   │   │   └── index.js
+│   │	│   ├── rooms/
+│   │	│   │   │
+│   │	│   │   ├── api/
+│   │	│   │   │   ├── room.api.js
 │   │	│   │   │   ├── room.queries.js
 │   │	│   │   │   ├── room.mutations.js
 │   │	│   │   │   ├── room.endpoints.js
-│   │	│   │   │   ├── room.mapper.js
-│   │	│   │   │   ├── room.schema.js
 │   │	│   │   │   ├── room.keys.js
+│   │	│   │   │   ├── room.mapper.js
 │   │	│   │   │   ├── room.adapter.js
+│   │	│   │   │   ├── room.schema.js
 │   │   │   │   │   └── room.validator.js
 │   │	│   │   ├── components/
 │   │	│   │   │   ├── cards/
 │   │	│   │   │   │   ├── RoomCard.jsx
 │   │	│   │   │   │   ├── RoomGridCard.jsx
-│   │	│   │   │   │   ├── RoomListCard.jsx
-│   │   │   │   │   │   └── room-card.css
+│   │   │   │   │   │   └── RoomListCard.jsx
 │   │	│   │   │   ├── forms/
 │   │	│   │   │   │   ├── RoomForm.jsx
 │   │	│   │   │   │   ├── RoomPriceForm.jsx
@@ -279,39 +339,52 @@ Fullstack-Hotel-Management-System/
 │   │	│   │   │   │   ├── RoomStatusFilter.jsx
 │   │	│   │   │   │   ├── RoomTypeFilter.jsx
 │   │   │   │   │   │   └── RoomPriceFilter.jsx
+│   │	│   │   │   ├── details/
+│   │	│   │   │   │   ├── RoomDetailsHeader.jsx
+│   │	│   │   │   │   ├── RoomDetailsInfo.jsx
+│   │	│   │   │   │   ├── RoomAmenitiesList.jsx
+│   │	│   │   │   │   ├── RoomPricingDetails.jsx
+│   │   │   │   │   │   └── RoomAvailabilityCalendar.jsx
 │   │	│   │   │   ├── modals/
 │   │	│   │   │   │   ├── CreateRoomModal.jsx
 │   │	│   │   │   │   ├── UpdateRoomStatusModal.jsx
 │   │	│   │   │   │   ├── DeleteRoomModal.jsx
 │   │	│   │   │   │   ├── RoomDetailsModal.jsx
 │   │   │   │   │   │   └── RoomGalleryModal.jsx
-│   │	│   │   │   ├── galleries/
+│   │	│   │   │   ├── gallery/
 │   │	│   │   │   │   ├── RoomGallery.jsx
 │   │	│   │   │   │   ├── RoomImage.jsx
 │   │	│   │   │   │   ├── RoomCarousel.jsx
-│   │   │   │   │   │   └── RoomThumbnail.jsx
+│   │	│   │   │   │   ├── RoomThumbnail.jsx
+│   │   │   │   │   │   └── RoomLightbox
+│   │	│   │   │   ├── skeletons/
+│   │	│   │   │   │   ├── RoomCardSkeleton.jsx
+│   │	│   │   │   │   ├── RoomTableSkeleton.jsx
+│   │	│   │   │   │   ├── RoomDetailsSkeleton.jsx
+│   │	│   │   │   │   ├── RoomGallerySkeleton.jsx
+│   │   │   │   │   │   └── RoomAnalyticsSkeleton.jsx
 │   │	│   │   │   ├── status/
 │   │	│   │   │   │   ├── RoomStatusBadge.jsx
-│   │	│   │   │   │   ├── AvailabilityBadge.jsx
-│   │   │   │   │   │   └── CleaningStatusBadge.jsx
+│   │	│   │   │   │   ├── RoomAvailabilityBadge.jsx
+│   │	│   │   │   │   ├── RoomCleaningStatus.jsx
+│   │	│   │   │   │   ├── RoomMaintenanceStatus.jsx
+│   │   │   │   │   │   └── RoomOccupancyIndicator.jsx
 │   │	│   │   │   ├── analytics/
 │   │	│   │   │   │   ├── RoomOccupancyChart.jsx
 │   │	│   │   │   │   ├── RoomRevenueChart.jsx
-│   │   │   │   │   │   └── RoomStatsChart.jsx
+│   │	│   │   │   │   ├── RoomBookingStats.jsx
+│   │   │   │   │   │   └── RoomPerformanceCard.jsx
+│   │	│   │   │   ├── staletons/
+│   │	│   │   │   │   ├── RoomCardSkeleton.jsx
+│   │	│   │   │   │   ├── RoomTableSkeleton.jsx
+│   │   │   │   │   │   └── RoomDetailsSkeleton.jsx
 │   │   │   │   │   └── shared/
 │   │	│   │   │       ├── RoomHeader.jsx
 │   │	│   │   │       ├── RoomActions.jsx
+│   │	│   │   │       ├── RoomMeta.jsx
+│   │	│   │   │       ├── RoomTags.jsx
 │   │	│   │   │       ├── RoomEmptyState.jsx
-│   │	│   │   │       ├── RoomErrorState.jsx
-│   │   │   │   │       └── RoomLoader.jsx
-│   │	│   │   ├── pages/
-│   │	│   │   │   ├── Rooms.jsx
-│   │	│   │   │   ├── RoomDetails.jsx
-│   │	│   │   │   ├── AddRoom.jsx
-│   │	│   │   │   ├── EditRoom.jsx
-│   │	│   │   │   ├── RoomAvailability.jsx
-│   │	│   │   │   ├── RoomAnalytics.jsx
-│   │   │   │   │   └── RoomCalendar.jsx
+│   │   │   │   │       └── RoomErrorState.jsx
 │   │	│   │   ├── hooks/
 │   │	│   │   │   ├── useRooms.js
 │   │	│   │   │   ├── useRoom.js
@@ -321,114 +394,817 @@ Fullstack-Hotel-Management-System/
 │   │	│   │   │   ├── useRoomFilters.js
 │   │	│   │   │   ├── useRoomSearch.js 
 │   │	│   │   │   ├── useRoomPagination.js
-│   │	│   │   │   ├── useRoomPagination.js 
-│   │   │   │   │   └── useRoomAvailability.js
+│   │	│   │   │   ├── useRoomAvailability.js
+│   │   │   │   │   └── useAnalytics.js
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── RoomsPage.jsx
+│   │	│   │   │   ├── RoomDetailspage.jsx
+│   │	│   │   │   ├── AddRoomPage.jsx
+│   │	│   │   │   ├── EditRoomPage.jsx
+│   │	│   │   │   ├── RoomAvailabilityPage.jsx
+│   │	│   │   │   ├── RoomAnalyticsPage.jsx
+│   │   │   │   │   └── RoomCalendarPage.jsx
 │   │	│   │   ├── routes/
 │   │   │   │   │   └── room.routes.jsx
 │   │	│   │   ├── store/
 │   │	│   │   │   ├── room.store.js
 │   │	│   │   │   ├── room.actions.js
-│   │   │   │   │   └── room.selectors.js
+│   │   │   │   │   └── room.selectors.js 
 │   │	│   │   ├── constants/
 │   │	│   │   │   ├── room.constants.js
 │   │	│   │   │   ├── room.status.js
 │   │	│   │   │   ├── room.types.js
 │   │   │   │   │   └── room.filters.js
-│   │	│   │   ├── utils/
-│   │	│   │   │   ├── room.helpers.js
-│   │	│   │   │   ├── room.formatters.js
-│   │	│   │   │   ├── room.calculations.js
-│   │	│   │   │   ├── room.Permissions.js
-│   │   │   │   │   └── room.transformers.js
 │   │	│   │   ├── schemas/
 │   │	│   │   │   ├── roomForm.schema.js
 │   │	│   │   │   ├── roomFilter.schema.js
 │   │   │   │   │   └── roomPricing.schema.js 
-│   │	│   │   ├── styles/
-│   │	│   │   │   ├── rooms.css
-│   │	│   │   │   ├── room-table.css
-│   │	│   │   │   ├── room-card.css 
-│   │   │   │   │   └── room-form.css  
+│   │	│   │   ├── utils/
+│   │	│   │   │   ├── room.helpers.js
+│   │	│   │   │   ├── room.formatters.js
+│   │	│   │   │   ├── room.calculations.js
+│   │	│   │   │   ├── room.permissions.js
+│   │   │   │   │   └── room.transformers.js
 │   │	│   │   ├── mocks/
 │   │	│   │   │   ├── room.mock.js
 │   │   │   │   │   └── room.data.js
-│   │   │   │   └── tests/
-│   │	│   │       ├── RoomCard.test.jsx
-│   │	│   │       ├── RoomTable.test.jsx 
-│   │	│   │       ├── room.helpers.test.js
-│   │   │   │       └── room.helpers.test.js
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── RoomCard.test.jsx
+│   │	│   │   │   ├── RoomTable.test.jsx 
+│   │   │   │   │   └── room.helpers.test.js
+│   │	│   │   ├── styles/
+│   │	│   │   │   ├── rooms.css
+│   │	│   │   │   ├── room-card.css
+│   │	│   │   │   ├── room-table.css
+│   │   │   │   │   └── room-form.css
+│   │   │   │   └── index.js
 │   │   │   │
 │   │	│   ├── reservations
-│   │	│   │   ├── index.js
 │   │	│   │   ├── api/
+│   │	│   │   │   ├── reservation.api.js
+│   │	│   │   │   ├── reservation.queries.js
+│   │	│   │   │   ├── reservation.mutations.js
+│   │	│   │   │   ├── reservation.endpoints.js
+│   │	│   │   │   ├── reservation.mapper.js
+│   │	│   │   │   ├── reservation.adapter.js
+│   │	│   │   │   ├── reservation.schema.js 
+│   │	│   │   │   ├── reservation.keys.js
+│   │   │   │   │   └── reservation.validator.js 
 │   │	│   │   ├── components/
-│   │	│   │   ├── pages/
+│   │	│   │   │   ├── cards/
+│   │	│   │   │   │   ├── ReservationCard.jsx
+│   │	│   │   │   │   ├── ReservationGridCard.jsx
+│   │	│   │   │   │   ├── ReservationListCard.jsx
+│   │   │   │   │   │   └── ReservationSummary.jsx
+│   │	│   │   │   ├── forms/
+│   │	│   │   │   │   ├── ReservationForm.jsx
+│   │	│   │   │   │   ├── ReservationGuestForm.jsx
+│   │	│   │   │   │   ├── ReservationRoomForm.jsx
+│   │	│   │   │   │   ├── ReservationPaymentForm.jsx
+│   │   │   │   │   │   └── ReservationDatesForm.jsx
+│   │	│   │   │   ├── tables/
+│   │	│   │   │   │   ├── ReservationTable.jsx
+│   │	│   │   │   │   ├── ReservationTableRow.jsx
+│   │	│   │   │   │   ├── ReservationTableHeader.jsx
+│   │	│   │   │   │   ├── ReservationTableActions.jsx
+│   │   │   │   │   │   └── ReservationTablePagination.jsx
+│   │	│   │   │   ├── filters/
+│   │	│   │   │   │   ├── ReservationFilter.jsx
+│   │	│   │   │   │   ├── ReservationSearchFilter.jsx
+│   │	│   │   │   │   ├── ReservationStatusFilter.jsx
+│   │	│   │   │   │   ├── ReservationDateFilter.jsx
+│   │   │   │   │   │   └── ReservationGuestFilter.jsx
+│   │	│   │   │   ├── modals/
+│   │	│   │   │   │   ├── CreateReservationModal.jsx
+│   │	│   │   │   │   ├── EditReservationModal.jsx
+│   │	│   │   │   │   ├── CancelReservationModal.jsx
+│   │	│   │   │   │   ├── CheckInModal.jsx
+│   │   │   │   │   │   └── CheckOutModal.jsx
+│   │	│   │   │   ├── details/
+│   │	│   │   │   │   ├── ReservationDetailsHeader.jsx
+│   │	│   │   │   │   ├── ReservationDetailsInfo.jsx
+│   │	│   │   │   │   ├── ReservationGuestInfo.jsx
+│   │	│   │   │   │   ├── ReservationRoomInfo.jsx
+│   │	│   │   │   │   ├── ReservationPaymentInfo.jsx
+│   │   │   │   │   │   └── ReservationTimeline.jsx
+│   │	│   │   │   ├── status/
+│   │	│   │   │   │   ├── ReservationStatusBadge.jsx
+│   │	│   │   │   │   ├── CheckInStatusBadge.jsx
+│   │	│   │   │   │   ├── CheckOutStatusBadge.jsx
+│   │   │   │   │   │   └── PaymentStatusBadge.jsx
+│   │	│   │   │   ├── calendar/
+│   │	│   │   │   │   ├── ReservationCalendar.jsx
+│   │	│   │   │   │   ├── ReservationCalendarDay.jsx
+│   │	│   │   │   │   ├── ReservationCalendarWeek.jsx
+│   │   │   │   │   │   └── ReservationCalendarMonth.jsx
+│   │	│   │   │   ├── analytics/
+│   │	│   │   │   │   ├── ReservationRevenueChart.jsx
+│   │	│   │   │   │   ├── ReservationOccupancyChart.jsx
+│   │	│   │   │   │   ├── ReservationStats.jsx
+│   │   │   │   │   │   └── ReservationPerformanceCard.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── ReservationHeader.jsx
+│   │	│   │   │       ├── ReservationActionss.jsx
+│   │	│   │   │       ├── ReservationMeta.jsx
+│   │	│   │   │       ├── ReservationTags.jsx
+│   │	│   │   │       ├── ReservationEmptyState.jsx
+│   │   │   │   │       └── ReservationErrorState.jsx
 │   │	│   │   ├── hooks/
-│   │	│   │   ├── store/
+│   │	│   │   │   ├── useReservations.js
+│   │	│   │   │   ├── useReservation.js
+│   │	│   │   │   ├── useCreateReservation.js
+│   │	│   │   │   ├── useUpdateReservation.js
+│   │	│   │   │   ├── useCancelReservation.js
+│   │	│   │   │   ├── useCheckIn.js
+│   │	│   │   │   ├── useCheckOut.js 
+│   │	│   │   │   ├── useReservationFilters.js
+│   │	│   │   │   ├── useReservationSearch.js
+│   │	│   │   │   ├── useReservationPagination.js
+│   │   │   │   │   └── useReservationCalendar.js 
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── reservationsPage.jsx
+│   │	│   │   │   ├── ReservationDetailsPage.jsx
+│   │	│   │   │   ├── CreateReservationPage.jsx
+│   │	│   │   │   ├── EditReservationPage.jsx
+│   │	│   │   │   ├── ReservationCalendarPage.jsx
+│   │   │   │   │   └── ReeservationAnalyticsPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── reservation.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── reservation.constants.js
+│   │	│   │   │   ├── reservation.status.js 
+│   │	│   │   │   ├── reservation.types.js
+│   │   │   │   │   └── reservation.filters.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── reservationForm.schema.js 
+│   │	│   │   │   ├── reservationFilter.schema.js
+│   │   │   │   │   └── reservationPayment.schema.js 
 │   │	│   │   ├── utils/
-│   │	│   │   ├── analytics/
+│   │	│   │   │   ├── reservation.helpers.js
+│   │	│   │   │   ├── reservation.formatters.js
+│   │	│   │   │   ├── reservation.calculations.js 
+│   │	│   │   │   ├── reservation.permissions.js
+│   │   │   │   │   └── reservation.transformers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── ReservationCard.test.jsx 
+│   │	│   │   │   ├── ReservationTable.test.jsx
+│   │   │   │   │   └── reservation.helpers.test.js 
 │   │	│   │   ├── mocks/
-│   │   │   │   └── tests/
+│   │	│   │   │   ├── reservation.mock.js
+│   │   │   │   │   └── reservation.data.js
+│   │   │   │   └── index.js
 │   │   │   │
 │   │	│   ├── guests/
-│   │	│   │   ├── index.js
 │   │	│   │   ├── api/
+│   │	│   │   │   ├── guest.api.js
+│   │	│   │   │   ├── guest.queries.js
+│   │	│   │   │   ├── guest.mutations.js
+│   │	│   │   │   ├── guest.endpoints.js
+│   │	│   │   │   ├── guest.mapper.js
+│   │	│   │   │   ├── guest.adapter.js
+│   │	│   │   │   ├── guest.schema.js
+│   │	│   │   │   ├── guest.keys.js
+│   │   │   │   │   └── guest.validator.js
 │   │	│   │   ├── components/
-│   │	│   │   ├── pages/
+│   │	│   │   │   ├── cards/
+│   │	│   │   │   │   ├── GuestCard.jsx
+│   │	│   │   │   │   ├── GuestGridCard.jsx
+│   │	│   │   │   │   ├── GuestListCard.jsx
+│   │   │   │   │   │   └── GuestSummaryCard.jsx
+│   │	│   │   │   ├── forms/
+│   │	│   │   │   │   ├── GuestForm.jsx
+│   │	│   │   │   │   ├── GuestContactForm.jsx
+│   │	│   │   │   │   ├── GuestAddressForm.jsx
+│   │	│   │   │   │   ├── GuestDocumentForm.jsx
+│   │   │   │   │   │   └── GuestPreferencesForm.jsx
+│   │	│   │   │   ├── tables/
+│   │	│   │   │   │   ├── GuestTable.jsx
+│   │	│   │   │   │   ├── GuestTableRow.jsx
+│   │	│   │   │   │   ├── GuestTableHeader.jsx
+│   │	│   │   │   │   ├── GuestTableActions.jsx
+│   │   │   │   │   │   └── GuestTablePagination.jsx
+│   │	│   │   │   ├── filters/
+│   │	│   │   │   │   ├── GuestFilter.jsx
+│   │	│   │   │   │   ├── GuestSearchFilter.jsx
+│   │	│   │   │   │   ├── GuestStatusFilter.jsx
+│   │	│   │   │   │   ├── GuestCountryFilter.jsx
+│   │   │   │   │   │   └── GuestLoyaltyFilter.jsx
+│   │	│   │   │   ├── modals/
+│   │	│   │   │   │   ├── CreateGuestModal.jsx
+│   │	│   │   │   │   ├── EditGuestModal.jsx
+│   │	│   │   │   │   ├── DeleteGuestModal.jsx
+│   │	│   │   │   │   ├── GuestDetailsModal.jsx
+│   │   │   │   │   │   └── GuestDocumentsModal.jsx
+│   │	│   │   │   ├── details/
+│   │	│   │   │   │   ├── GuestDetailsHeader.jsx
+│   │	│   │   │   │   ├── GuestDetailsInfo.jsx
+│   │	│   │   │   │   ├── GuestContactInfo.jsx
+│   │	│   │   │   │   ├── GuestAddressInfo.jsx
+│   │	│   │   │   │   ├── GuestStayHistory.jsx
+│   │	│   │   │   │   ├── GuestPreferences.jsx
+│   │   │   │   │   │   └── GuestDocuments.jsx
+│   │	│   │   │   ├── loyalty/
+│   │	│   │   │   │   ├── LoyaltyBadge.jsx
+│   │	│   │   │   │   ├── LoyaltyPointsCard.jsx
+│   │	│   │   │   │   ├── LoyaltyHistory.jsx
+│   │   │   │   │   │   └── LoyaltyTierBadge.jsx
+│   │	│   │   │   ├── analytics/
+│   │	│   │   │   │   ├── GuestDemographicsChart.jsx
+│   │	│   │   │   │   ├── GuestRetentionChartChart.jsx
+│   │	│   │   │   │   ├── GuestStats.jsx
+│   │   │   │   │   │   └── GuestLifetimeValueCard.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── GuestHeader.jsx
+│   │	│   │   │       ├── GuestActions.jsx
+│   │	│   │   │       ├── GuestMeta.jsx
+│   │	│   │   │       ├── GuestTags.jsx
+│   │	│   │   │       ├── GuestEmptyState.jsx
+│   │   │   │   │       └── GuestErrorState.jsx
 │   │	│   │   ├── hooks/
-│   │	│   │   ├── store/
+│   │	│   │   │   ├── useGuests.js
+│   │	│   │   │   ├── useGuest.js
+│   │	│   │   │   ├── useCreateGuest.js
+│   │	│   │   │   ├── useUpdateGuest.js
+│   │	│   │   │   ├── useDeleteGuest.js
+│   │	│   │   │   ├── useGuestFilters.js
+│   │	│   │   │   ├── useGuestSearch.js 
+│   │	│   │   │   ├── useGuestPagination.js
+│   │	│   │   │   ├── useGuestDocument.js
+│   │   │   │   │   └── useGuestLoyalty.js 
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── GuestsPage.jsx
+│   │	│   │   │   ├── GuestDetailsPage.jsx
+│   │	│   │   │   ├── CreateGuestPage.jsx
+│   │	│   │   │   ├── EditGuestPage.jsx
+│   │	│   │   │   ├── GuestAnalyticsPage.jsx
+│   │   │   │   │   └── GuestLoyaltyPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── guest.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── guest.constants.js
+│   │	│   │   │   ├── guest.status.js 
+│   │	│   │   │   ├── guest.types.js
+│   │   │   │   │   └── guest.filters.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── guestForm.schema.js 
+│   │	│   │   │   ├── guestFilter.schema.js
+│   │   │   │   │   └── guestDocument.schema.js 
 │   │	│   │   ├── utils/
-│   │	│   │   ├── analytics/
+│   │	│   │   │   ├── guest.helpers.js
+│   │	│   │   │   ├── guest.formatters.js
+│   │	│   │   │   ├── guest.calculations.js 
+│   │	│   │   │   ├── guest.permissions.js
+│   │   │   │   │   └── guest.transformers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── GuestCard.test.jsx
+│   │	│   │   │   ├── GuestTable.test.jsx
+│   │   │   │   │   └── guest.helpers.test.js 
 │   │	│   │   ├── mocks/
-│   │   │   │   └── tests/
+│   │	│   │   │   ├── guest.mock.js
+│   │   │   │   │   └── guest.data.js
+│   │   │   │   └── index.js
 │   │   │   │
-│   │	│   ├── staffs/
-│   │	│   │   ├── index.js
+│   │	│   ├── employees/
 │   │	│   │   ├── api/
+│   │	│   │   │   ├── employee.api.js
+│   │	│   │   │   ├── employee.queries.js
+│   │	│   │   │   ├── employee.mutations.js
+│   │	│   │   │   ├── employee.endpoints.js
+│   │	│   │   │   ├── employee.mapper.js
+│   │	│   │   │   ├── employee.adapter.js
+│   │	│   │   │   ├── employee.schema.js
+│   │	│   │   │   ├── employee.keys.js
+│   │   │   │   │   └── employee.validator.js
 │   │	│   │   ├── components/
-│   │	│   │   ├── pages/
+│   │	│   │   │   ├── cards/
+│   │	│   │   │   │   ├── EmployeeCard.jsx
+│   │	│   │   │   │   ├── EmployeeGridCard.jsx
+│   │	│   │   │   │   ├── EmployeeListCard.jsx
+│   │   │   │   │   │   └── EmployeeSummaryCard.jsx
+│   │	│   │   │   ├── forms/
+│   │	│   │   │   │   ├── EmployeeForm.jsx
+│   │	│   │   │   │   ├── EmployeePersonForm.jsx
+│   │	│   │   │   │   ├── EmployeeContactForm.jsx
+│   │	│   │   │   │   ├── EmployeeRoleForm.jsx
+│   │   │   │   │   │   └── EmployeeDocumentForm.jsx
+│   │	│   │   │   ├── tables/
+│   │	│   │   │   │   ├── EmployeeTable.jsx
+│   │	│   │   │   │   ├── EmployeeTableRow.jsx
+│   │	│   │   │   │   ├── EmployeeTableHeader.jsx
+│   │	│   │   │   │   ├── EmployeeTableActions.jsx
+│   │   │   │   │   │   └── EmployeeTablePagination.jsx
+│   │	│   │   │   ├── filters/
+│   │	│   │   │   │   ├── EmployeeFilters.jsx
+│   │	│   │   │   │   ├── EmployeeSearchFilter.jsx
+│   │	│   │   │   │   ├── EmployeeRoleFilter.jsx
+│   │	│   │   │   │   ├── EmployeeDepartmentFilter.jsx
+│   │   │   │   │   │   └── EmployeeStatusFilter.jsx
+│   │	│   │   │   ├── modals/
+│   │	│   │   │   │   ├── CreateEmployeeModal.jsx
+│   │	│   │   │   │   ├── EditEmployeeModal.jsx
+│   │	│   │   │   │   ├── DeleteEmployeeModal.jsx
+│   │	│   │   │   │   ├── EmployeeDetailsModal.jsx
+│   │   │   │   │   │   └── EmployeeDocumentsModal.jsx
+│   │	│   │   │   ├── details/
+│   │	│   │   │   │   ├── EmployeeDetailsHeader.jsx
+│   │	│   │   │   │   ├── EmployeeDetailsInfo.jsx
+│   │	│   │   │   │   ├── EmployeeContactInfo.jsx
+│   │	│   │   │   │   ├── EmployeeRoleInfo.jsx
+│   │	│   │   │   │   ├── EmployeeDocuments.jsx
+│   │   │   │   │   │   └── EmployeeActivityLog.jsx
+│   │	│   │   │   ├── attendance/
+│   │	│   │   │   │   ├── AttendanceTable.jsx
+│   │	│   │   │   │   ├── AttendanceBadge.jsx
+│   │	│   │   │   │   ├── CheckInButton.jsx
+│   │   │   │   │   │   └── CheckOutButton.jsx
+│   │	│   │   │   ├── schedules/
+│   │	│   │   │   │   ├── ShiftCalendar.jsx
+│   │	│   │   │   │   ├── ShiftCard.jsx
+│   │	│   │   │   │   ├── ShiftAssignmentForm.jsx
+│   │   │   │   │   │   └── ScheduleOverview.jsx
+│   │	│   │   │   ├── payroll/
+│   │	│   │   │   │   ├── PayrollCard.jsx
+│   │	│   │   │   │   ├── SalarySummary.jsx
+│   │	│   │   │   │   ├── PayrollHistory.jsx
+│   │   │   │   │   │   └── PayrollStatusBadge.jsx
+│   │	│   │   │   ├── analytics/
+│   │	│   │   │   │   ├── EmployeePerformanceChart.jsx
+│   │	│   │   │   │   ├── AttendanceChart.jsx
+│   │	│   │   │   │   ├── EmployeeStats.jsx
+│   │   │   │   │   │   └── WorkforceSummaryCard.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── EmployeeHeader.jsx
+│   │	│   │   │       ├── EmployeeActions.jsx
+│   │	│   │   │       ├── EmployeeMeta.jsx
+│   │	│   │   │       ├── EmployeeTags.jsx
+│   │	│   │   │       ├── EmployeeEmptyState.jsx
+│   │   │   │   │       └── EmployeeErrorState.jsx
 │   │	│   │   ├── hooks/
-│   │	│   │   ├── store/
+│   │	│   │   │   ├── useEmployees.js
+│   │	│   │   │   ├── useEmployee.js
+│   │	│   │   │   ├── useCreateEmployee.js
+│   │	│   │   │   ├── useUpdateEmployee.js
+│   │	│   │   │   ├── useDeleteEmployee.js
+│   │	│   │   │   ├── useEmployeeFilters.js
+│   │	│   │   │   ├── useEmployeeSearch.js 
+│   │	│   │   │   ├── useEmployeePagination.js
+│   │	│   │   │   ├── useAttendance.js
+│   │	│   │   │   ├── useShiftSchedule.js
+│   │   │   │   │   └── usePayroll.js 
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── EmployeePage.jsx
+│   │	│   │   │   ├── EmployeeDetailsPage.jsx
+│   │	│   │   │   ├── CreateEmployeePage.jsx
+│   │	│   │   │   ├── EditEmployeePage.jsx
+│   │	│   │   │   ├── ShiftSchedulePage.jsx
+│   │	│   │   │   ├── PayrollPage.jsx
+│   │   │   │   │   └── EmployeeAnalyticsPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── employee.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── employee.constants.js
+│   │	│   │   │   ├── employee.roles.js 
+│   │	│   │   │   ├── employee.status.js
+│   │   │   │   │   └── employee.departments.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── employeeForm.schema.js 
+│   │	│   │   │   ├── employeeFilter.schema.js
+│   │	│   │   │   ├── attendance.schema.js
+│   │   │   │   │   └── payroll.schema.js 
 │   │	│   │   ├── utils/
-│   │	│   │   ├── analytics/
+│   │	│   │   │   ├── employee.helpers.js
+│   │	│   │   │   ├── employee.formatters.js
+│   │	│   │   │   ├── employee.permissions.js 
+│   │	│   │   │   ├── employee.Calculations.js
+│   │   │   │   │   └── employee.transformers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── EmployeeCard.test.jsx
+│   │	│   │   │   ├── EmployeeTable.test.jsx
+│   │   │   │   │   └── employee.helpers.test.js 
 │   │	│   │   ├── mocks/
-│   │   │   │   └── tests/
+│   │	│   │   │   ├── employee.mock.js
+│   │   │   │   │   └── employee.data.js
+│   │   │   │   └── index.js
 │   │   │   │
-│   │	│   ├── payments/
-│   │	│   │   ├── index.js
+│   │	│   ├── billings/
 │   │	│   │   ├── api/
+│   │	│   │   │   ├── billing.api.js
+│   │	│   │   │   ├── billing.queries.js
+│   │	│   │   │   ├── billing.mutations.js
+│   │	│   │   │   ├── billing.endpoints.js
+│   │	│   │   │   ├── billing.mapper.js
+│   │	│   │   │   ├── billing.adapter.js
+│   │	│   │   │   ├── billing.schema.js
+│   │	│   │   │   ├── billing.keys.js
+│   │   │   │   │   └── billing.validator.js
 │   │	│   │   ├── components/
-│   │	│   │   ├── pages/
+│   │	│   │   │   ├── cards/
+│   │	│   │   │   │   ├── InvoiceCard.jsx
+│   │	│   │   │   │   ├── PaymentCard.jsx
+│   │	│   │   │   │   ├── RevenueCard.jsx
+│   │   │   │   │   │   └── BillingSummaryCard.jsx
+│   │	│   │   │   ├── forms/
+│   │	│   │   │   │   ├── InvoiceForm.jsx
+│   │	│   │   │   │   ├── PaymentForm.jsx
+│   │	│   │   │   │   ├── RefundForm.jsx
+│   │	│   │   │   │   ├── DiscountForm.jsx
+│   │   │   │   │   │   └── TaxForm.jsx
+│   │	│   │   │   ├── tables/
+│   │	│   │   │   │   ├── InvoiceTable.jsx
+│   │	│   │   │   │   ├── InvoiceTableRow.jsx
+│   │	│   │   │   │   ├── InvoiceTableHeader.jsx
+│   │	│   │   │   │   ├── InvoiceTableActions.jsx
+│   │	│   │   │   │   ├── PaymentTable.jsx
+│   │   │   │   │   │   └── PaymentTablePagination.jsx
+│   │	│   │   │   ├── filters/
+│   │	│   │   │   │   ├── BillingFilters.jsx
+│   │	│   │   │   │   ├── PaymentStatusFilter.jsx
+│   │	│   │   │   │   ├── InvoiceStatusFilter.jsx
+│   │	│   │   │   │   ├── DateRangeFilter.jsx
+│   │   │   │   │   │   └── PaymentMethodFilter.jsx
+│   │	│   │   │   ├── modals/
+│   │	│   │   │   │   ├── CreateInvoiceModal.jsx
+│   │	│   │   │   │   ├── RecordPaymentModal.jsx
+│   │	│   │   │   │   ├── RefundPaymentModal.jsx
+│   │	│   │   │   │   ├── InvoiceDetailsModal.jsx
+│   │   │   │   │   │   └── PaymentDetailsModal.jsx
+│   │	│   │   │   ├── details/
+│   │	│   │   │   │   ├── InvoiceDetails.jsx
+│   │	│   │   │   │   ├── InvoiceLineItems.jsx
+│   │	│   │   │   │   ├── PaymentDetails.jsx
+│   │	│   │   │   │   ├── RefundDetails.jsx
+│   │   │   │   │   │   └── TaxBreakdown.jsx
+│   │	│   │   │   ├── status/
+│   │	│   │   │   │   ├── InvoiceStatusBadge.jsx
+│   │	│   │   │   │   ├── PaymentStatusBadge.jsx
+│   │	│   │   │   │   ├── RefundStatusBadge.jsx
+│   │   │   │   │   │   └── PaymentMethodBadge.jsx
+│   │	│   │   │   ├── analytics/
+│   │	│   │   │   │   ├── RevenueChart.jsx
+│   │	│   │   │   │   ├── PaymentMethodChart.jsx
+│   │	│   │   │   │   ├── BillingStats.jsx
+│   │   │   │   │   │   └── RevenueSummaryCard.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── BillingHeader.jsx
+│   │	│   │   │       ├── BillingActions.jsx
+│   │	│   │   │       ├── BillingMeta.jsx
+│   │	│   │   │       ├── BillingTags.jsx
+│   │	│   │   │       ├── BillingEmptyState.jsx
+│   │   │   │   │       └── BillingErrorState.jsx
 │   │	│   │   ├── hooks/
-│   │	│   │   ├── store/
+│   │	│   │   │   ├── useInvoices.js
+│   │	│   │   │   ├── useInvoice.js
+│   │	│   │   │   ├── useCreateInvoice.js
+│   │	│   │   │   ├── useUpdateInvoice.js
+│   │	│   │   │   ├── useDeleteInvoice.js
+│   │	│   │   │   ├── usePayments.js
+│   │	│   │   │   ├── usePayment.js 
+│   │	│   │   │   ├── useRecordPayment.js
+│   │	│   │   │   ├── useRefundPayment.js
+│   │	│   │   │   ├── useBillingFilters.js
+│   │   │   │   │   └── useRevenueAnalytics.js 
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── BillingPage.jsx
+│   │	│   │   │   ├── invoiceDetailsPage.jsx
+│   │	│   │   │   ├── CreateInvoicePage.jsx
+│   │	│   │   │   ├── PaymentsPage.jsx
+│   │	│   │   │   ├── RefundsPage.jsx
+│   │   │   │   │   └── BillingAnalyticsPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── billing.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── billing.constants.js
+│   │	│   │   │   ├── invoice.status.js 
+│   │	│   │   │   ├── payment.status.js
+│   │   │   │   │   └── payment.methods.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── InvoiceForm.schema.js 
+│   │	│   │   │   ├── paymentForm.schema.js
+│   │	│   │   │   ├── refundForm.schema.js
+│   │   │   │   │   └── billingFilter.schema.js 
 │   │	│   │   ├── utils/
-│   │	│   │   ├── analytics/
+│   │	│   │   │   ├── billing.helpers.js
+│   │	│   │   │   ├── billing.formatters.js
+│   │	│   │   │   ├── billing.calculations.js 
+│   │	│   │   │   ├── billing.permissions.js
+│   │   │   │   │   └── billing.transformers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── InvoiceCard.test.jsx
+│   │	│   │   │   ├── InvoiceTable.test.jsx
+│   │   │   │   │   └── billing.helpers.test.js 
 │   │	│   │   ├── mocks/
-│   │   │   │   └── tests/
+│   │	│   │   │   ├── billing.mock.js
+│   │   │   │   │   └── billing.data.js
+│   │   │   │   └── index.js
 │   │   │   │
-│   │	│   ├── inventory/
-│   │	│   │   ├── index.js
+│   │	│   ├── reports/
 │   │	│   │   ├── api/
+│   │	│   │   │   ├── report.api.js
+│   │	│   │   │   ├── report.queries.js
+│   │	│   │   │   ├── report.endpoints.js
+│   │	│   │   │   ├── report.mapper.js
+│   │	│   │   │   ├── report.adapter.js
+│   │	│   │   │   ├── report.schema.js
+│   │	│   │   │   ├── report.keys.js
+│   │   │   │   │   └── report.validator.js
 │   │	│   │   ├── components/
-│   │	│   │   ├── pages/
+│   │	│   │   │   ├── cards/
+│   │	│   │   │   │   ├── KPIRevenueCard.jsx
+│   │	│   │   │   │   ├── KPIOccupancyCard.jsx
+│   │	│   │   │   │   ├── KPIBookingCard.jsx
+│   │	│   │   │   │   ├── KPIGuestCard.jsx
+│   │   │   │   │   │   └── KPIEmployeeCard.jsx
+│   │	│   │   │   ├── charts/
+│   │	│   │   │   │   ├── RevenueChart.jsx
+│   │	│   │   │   │   ├── OccupancyReportChart.jsx
+│   │	│   │   │   │   ├── BookinTrendChart.jsx
+│   │	│   │   │   │   ├── GuestDemographicChart.jsx
+│   │	│   │   │   │   ├── RoomPerformanceChart.jsx
+│   │	│   │   │   │   ├── PaymentMethodChart.jsx
+│   │   │   │   │   │   └── EmployeePerformanceChart.jsx
+│   │	│   │   │   ├── tables/
+│   │	│   │   │   │   ├── RevenueReportTable.jsx
+│   │	│   │   │   │   ├── ReservationReportTable.jsx
+│   │	│   │   │   │   ├── GuestReportTable.jsx
+│   │	│   │   │   │   ├── EmployeeReportTable.jsx
+│   │   │   │   │   │   └── FinancialReportTable.jsx
+│   │	│   │   │   ├── filters/
+│   │	│   │   │   │   ├── ReportFilters.jsx
+│   │	│   │   │   │   ├── DateRangeFilter.jsx
+│   │	│   │   │   │   ├── ReportTypeFilter.jsx
+│   │	│   │   │   │   ├── DepartmentFilter.jsx
+│   │   │   │   │   │   └── ExportFilter.jsx
+│   │	│   │   │   ├── exports/
+│   │	│   │   │   │   ├── ExportCSVButton.jsx
+│   │	│   │   │   │   ├── ExportExcelButton.jsx
+│   │	│   │   │   │   ├── ExportPDFButton.jsx
+│   │   │   │   │   │   └── PrintReportButton.jsx
+│   │	│   │   │   ├── dashboards/
+│   │	│   │   │   │   ├── RevenueDashboard.jsx
+│   │	│   │   │   │   ├── OccupancyDashboard.jsx
+│   │	│   │   │   │   ├── ReservationDashboard.jsx
+│   │	│   │   │   │   ├── GuestDashboard.jsx
+│   │   │   │   │   │   └── ExecutiveDashboard.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── ReportHeader.jsx
+│   │	│   │   │       ├── ReportActions.jsx
+│   │	│   │   │       ├── ReportMeta.jsx
+│   │	│   │   │       ├── ReportEmptyState.jsx
+│   │   │   │   │       └── ReportErrorState.jsx
 │   │	│   │   ├── hooks/
-│   │	│   │   ├── store/
+│   │	│   │   │   ├── useRevenueReport.js
+│   │	│   │   │   ├── useOccupancyReport.js
+│   │	│   │   │   ├── useReservationReport.js
+│   │	│   │   │   ├── useGuestReport.js
+│   │	│   │   │   ├── useEmployeeReport.js
+│   │	│   │   │   ├── useFinancialReport.js
+│   │	│   │   │   ├── useReportFilter.js 
+│   │	│   │   │   ├── useExportReport.js
+│   │   │   │   │   └── useDashboardMetrics.js
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── ReportsPage.jsx
+│   │	│   │   │   ├── RevenueReportPage.jsx
+│   │	│   │   │   ├── OccupancyReportPage.jsx
+│   │	│   │   │   ├── ReservationReportPage.jsx
+│   │	│   │   │   ├── GuestReportPage.jsx
+│   │	│   │   │   ├── EmployeeReportPage.jsx
+│   │	│   │   │   ├── FinancialReportPage.jsx
+│   │   │   │   │   └── ExecutiveDashboardPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── report.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── report.constants.js
+│   │	│   │   │   ├── report.status.js 
+│   │	│   │   │   ├── export.types.js
+│   │   │   │   │   └── dashboard.types.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── reportFilter.schema.js
+│   │	│   │   │   ├── export.schema.js
+│   │   │   │   │   └── dashboard.schema.js 
 │   │	│   │   ├── utils/
-│   │	│   │   ├── analytics/
+│   │	│   │   │   ├── report.helpers.js
+│   │	│   │   │   ├── report.formatters.js
+│   │	│   │   │   ├── report.calculations.js 
+│   │	│   │   │   ├── report.transformers.js
+│   │   │   │   │   └── report.exporters.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── RevenueChart.test.jsx
+│   │	│   │   │   ├── ReportFilter.test.jsx
+│   │   │   │   │   └── report.helpers.test.js 
 │   │	│   │   ├── mocks/
-│   │   │   │   └── tests/
+│   │	│   │   │   ├── report.mock.js
+│   │   │   │   │   └── report.data.js
+│   │   │   │   └── index.js
 │   │   │   │
-│   │   │   └── reports/
-│   │	│       ├── index.js
-│   │	│       ├── api/
-│   │	│       ├── components/
-│   │	│       ├── pages/
-│   │	│       ├── hooks/
-│   │	│       ├── store/
-│   │	│       ├── utils/
-│   │	│       ├── analytics/
-│   │	│       ├── mocks/
-│   │   │       └── tests/
+│   │   │   └── settings/
+│   │	│   │   ├── api/
+│   │	│   │   │   ├── settings.api.js
+│   │	│   │   │   ├── settings.queries.js
+│   │	│   │   │   ├── settings.mutations.js
+│   │	│   │   │   ├── settings.endpoints.js
+│   │	│   │   │   ├── settings.mapper.js
+│   │	│   │   │   ├── settings.adapter.js
+│   │	│   │   │   ├── settings.schema.js
+│   │	│   │   │   ├── settings.keys.js
+│   │   │   │   │   └── settings.validator.js
+│   │	│   │   ├── components/
+│   │	│   │   │   ├── hotel/
+│   │	│   │   │   │   ├── HotelProfileForm.jsx
+│   │	│   │   │   │   ├── HotelLogoUploader.jsx
+│   │	│   │   │   │   ├── HotelAddressForm.jsx
+│   │   │   │   │   │   └── HotelContactForm.jsx
+│   │	│   │   │   ├── reservations/
+│   │	│   │   │   │   ├── ReservationPolicyForm.jsx
+│   │	│   │   │   │   ├── CheckInSettings.jsx
+│   │	│   │   │   │   ├── CheckOutSettings.jsx
+│   │   │   │   │   │   └── CancellationPolicyForm.jsx
+│   │	│   │   │   ├── rooms/
+│   │	│   │   │   │   ├── RoomTypeSettings.jsx
+│   │	│   │   │   │   ├── AmenitiesSettings.jsx
+│   │	│   │   │   │   ├── PricingSettings.jsx
+│   │   │   │   │   │   └── RoomStatusSetting.jsx
+│   │	│   │   │   ├── billing/
+│   │	│   │   │   │   ├── TaxSettings.jsx
+│   │	│   │   │   │   ├── CurrencySettings.jsx
+│   │	│   │   │   │   ├── InvoiceSettings.jsx
+│   │   │   │   │   │   └── PaymentGatewaySettings.jsx
+│   │	│   │   │   ├── notifications/
+│   │	│   │   │   │   ├── EmailSettings.jsx
+│   │	│   │   │   │   ├── SmsSettings.jsx
+│   │	│   │   │   │   ├── PushNotificationSettings.jsx
+│   │   │   │   │   │   └── NotificationTemplates.jsx
+│   │	│   │   │   ├── security/
+│   │	│   │   │   │   ├── PasswordPolicySettings.jsx
+│   │	│   │   │   │   ├── SessionSettings.jsx
+│   │	│   │   │   │   ├── TwoFactorSettings.jsx
+│   │   │   │   │   │   └── AccessControlSettings.jsx
+│   │	│   │   │   ├── integrations/
+│   │	│   │   │   │   ├── PaymentProviderSettings.jsx
+│   │	│   │   │   │   ├── EmailProviderSettings.jsx
+│   │	│   │   │   │   ├── SmsProviderSettings.jsx
+│   │   │   │   │   │   └── ThirdPartyIntegration.jsx
+│   │   │   │   │   └── shared/
+│   │	│   │   │       ├── SettingsHeader.jsx
+│   │	│   │   │       ├── SettingsSidebar.jsx
+│   │	│   │   │       ├── SettingSection.jsx
+│   │	│   │   │       ├── SettingsLoading.jsx
+│   │   │   │   │       └── SettingsError.jsx
+│   │	│   │   ├── hooks/
+│   │	│   │   │   ├── useSettings.js
+│   │	│   │   │   ├── useHotelSettings.js
+│   │	│   │   │   ├── useRoomSettings.js
+│   │	│   │   │   ├── useReservationSettings.js
+│   │	│   │   │   ├── useBillingSettings.js
+│   │	│   │   │   ├── useNotificationSettings.js 
+│   │	│   │   │   ├── useSecuritySettings.js
+│   │   │   │   │   └── useIntegrationSetting.js
+│   │	│   │   ├── pages/
+│   │	│   │   │   ├── SettingsPage.jsx
+│   │	│   │   │   ├── HotelSettingsPage.jsx
+│   │	│   │   │   ├── ReservationSettingsPage.jsx
+│   │	│   │   │   ├── RoomSettingsPage.jsx
+│   │	│   │   │   ├── BillingSettingPage.jsx
+│   │	│   │   │   ├── NotificationSettingPage.jsx
+│   │	│   │   │   ├── SecuritySettingsPage.jsx
+│   │   │   │   │   └── IntegrationSettingsPage.jsx 
+│   │	│   │   ├── routes/
+│   │   │   │   │   └── settings.routes.jsx
+│   │	│   │   ├── constants/
+│   │	│   │   │   ├── settings.constants.js
+│   │	│   │   │   ├── currencies.js 
+│   │	│   │   │   ├── timezones.js
+│   │   │   │   │   └── languages.js 
+│   │	│   │   ├── schemas/
+│   │	│   │   │   ├── hotelSettings.schema.js
+│   │	│   │   │   ├── billingSettings.schema.js
+│   │	│   │   │   ├── securitySettings.schema.js
+│   │   │   │   │   └── notificationSettings.schema.js 
+│   │	│   │   ├── utils/
+│   │	│   │   │   ├── settings.helpersjs
+│   │	│   │   │   ├── settings.formatters.js 
+│   │	│   │   │   ├── settings.permissions.js
+│   │   │   │   │   └── settings.transfermers.js 
+│   │	│   │   ├── tests/
+│   │	│   │   │   ├── SettingsPage.test.jsx
+│   │	│   │   │   ├── HotelSettingsForm.test.jsx
+│   │   │   │   │   └── settings.helpers.test.js 
+│   │	│   │   ├── mocks/
+│   │	│   │   │   ├── settings.mock.js
+│   │   │   │   │   └── settings.data.js
+│   │   │   │   └── index.js
+│   │   ├── components/
+│   │	│   ├── ui/
+│   │	│   │   ├── Button/
+│   │	│   │   ├── Input/
+│   │	│   │   ├── Select/
+│   │	│   │   ├── Textarea/
+│   │	│   │   ├── Checkbox/
+│   │	│   │   ├── Radio/
+│   │	│   │   ├── Switch/
+│   │	│   │   ├── Badge/
+│   │	│   │   ├── Avatar/
+│   │	│   │   ├── Spinner/
+│   │	│   │   ├── Skeleton/
+│   │	│   │   ├── Alert/
+│   │	│   │   ├── Modal/
+│   │	│   │   ├── Drawer/
+│   │	│   │   ├── Accordion/
+│   │	│   │   ├── Pagination/
+│   │	│   │   ├── Table/
+│   │	│   │   ├── Card/
+│   │   │   │   └── index.js
+│   │	│   ├── forms/
+│   │	│   │   ├── FormField.jsx
+│   │	│   │   ├── FormLabel.jsx
+│   │	│   │   ├── FormError.jsx
+│   │	│   │   ├── FormAction.jsx
+│   │   │   │   └── index.js
+│   │	│   ├── data-display/
+│   │	│   │   ├── DataTable.jsx
+│   │	│   │   ├── DataGrid.jsx
+│   │	│   │   ├── EmptyState.jsx
+│   │	│   │   ├── ErrorState.jsx
+│   │	│   │   ├── LoadingState.jsx
+│   │   │   │   └── index.js
+│   │	│   ├── navigation/
+│   │	│   │   ├── Sidebar.jsx
+│   │	│   │   ├── Navbar.jsx
+│   │	│   │   ├── Breadcrumb.jsx 
+│   │	│   │   ├── Menu.jsx
+│   │   │   │   └── index.js
+│   │	│   ├── feedback/
+│   │	│   │   ├── Toast.jsx 
+│   │	│   │   ├── ConfirmationDialog.jsx 
+│   │	│   │   ├── SuccessMessage.jsx 
+│   │   │   │   └── index.js
+│   │	│   ├── charts/
+│   │	│   │   ├── LineChart.jsx
+│   │	│   │   ├── BarChart.jsx 
+│   │	│   │   ├── PieChart.jsx
+│   │   │   │   └── index.js
+│   │	│   ├── layout/
+│   │	│   │   ├── PageHeader.jsx 
+│   │	│   │   ├── PageContainer.jsx
+│   │	│   │   ├── Section.jsx
+│   │   │   │   └── index.js
+│   │   │   └── index.js
+│   │   ├── services/
+│   │	│   ├── api/
+│   │	│   │   ├── axiosClient.js
+│   │	│   │   ├── apiClient.js
+│   │	│   │   ├── request.js
+│   │	│   │   ├── response.js
+│   │   │   │   └── interceptor.js
+│   │	│   ├── auth/
+│   │	│   │   ├── authServce.js
+│   │	│   │   ├── tokenService.js
+│   │   │   │   └── permissionService.js
+│   │	│   ├── storage/
+│   │	│   │   ├── localStorage.js
+│   │	│   │   ├── sessionStorage.js
+│   │   │   │   └── cookieStorage.js
+│   │	│   ├── notifications/
+│   │	│   │   ├── toastService.js
+│   │	│   │   ├── emailService.js
+│   │   │   │   └── smsService.js
+│   │	│   ├── upload/
+│   │	│   │   ├── imageUploadService.js
+│   │	│   │   ├── fileUploadService.js
+│   │   │   │   └── cloudinaryService.js
+│   │	│   ├── analytics/
+│   │	│   │   ├── analyticsService.js
+│   │	│   │   ├── trackingService.js
+│   │   │   │   └── eventService.js
+│   │	│   ├── websocket/
+│   │	│   │   ├── socketClient.js
+│   │   │   │   └── realtimeService.js
+│   │	│   ├── pringting/
+│   │	│   │   ├── request.js
+│   │	│   │   ├── rsponse.js
+│   │   │   │   └── interceptor.js
+│   │	│   ├── export/
+│   │	│   │   ├── request.js
+│   │	│   │   ├── rsponse.js
+│   │   │   │   └── interceptor.js
+│   │   │   └── index.js
+│   │   ├── hooks/
+│   │	│   ├── useDebounce.js
+│   │	│   ├── usePagination.js
+│   │	│   ├── useSearch.js
+│   │	│   ├── useFilter.js 
+│   │	│   ├── useSort.js 
+│   │	│   ├── useModal.js 
+│   │	│   ├── useLocalStorage.js 
+│   │	│   ├── useSessionStorage.js 
+│   │	│   ├── usePermissions.js
+│   │	│   ├── useCurrentUser.js 
+│   │	│   ├── useNotification.js 
+│   │	│   ├── usePageTitle.js 
+│   │	│   ├── useExport.js 
+│   │	│   ├── usePrint.js
+│   │   │   └── useRealtime.js
+│   │   ├── utils/
+│   │   ├── constants/
 │   │   ├── main.jsx
 │   │   └── App.jsx
 │   │
