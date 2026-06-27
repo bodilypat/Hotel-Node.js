@@ -189,5 +189,27 @@ const InvoiceCard = ({
             </button>
         </div>
     </div>
-    )
-}
+    );
+};
+
+InvoiceCard.propTypes = {
+    invoice: PropTypes.shape({
+        invoiceNumber: PropTypes.string.isRequired,
+        customerName: PropTypes.string.isRequired,
+        bookingId: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        issueDate: PropTypes.string,
+        dueDate: PropTypes.string,
+        totalAmount: PropTypes.number,
+        paidAmount: PropTypes.number,
+        paymentMethod: PropTypes.string,
+        status: PropTypes.string,
+    }).isRequired,
+    onView: PropTypes.func,
+    onDownload: PropTypes.func,
+    onPrint: PropTypes.func,
+};
+export default InvoiceCard;
+
